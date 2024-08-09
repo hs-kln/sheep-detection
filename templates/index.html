@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع أنعام">
+    <meta name="keywords" content="صحة أضحيتي, تقييم صحة الغنم, رعاية الأغنام">
+    <meta name="author" content="فريق أضحيتي">
+    <title>أضحيتي - الصفحة الرئيسية</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='images/SheepLogoV4GrauTransparent.png') }}" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='images/SheepLogoV4GrauTransparent.svg') }}" type="image/svg+xml">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyright = document.getElementById('copyright');
+            copyright.innerText = copyright.innerText.replace('2023', '2023-'+new Date().getFullYear());
+        
+            const navBarElement = document.getElementById('nav-bar');
+            window.addEventListener('scroll', function() {
+                if(window.scrollY > 70) navBarElement.classList.add('nav-on-scroll');
+                else navBarElement.classList.remove('nav-on-scroll');
+            });
+            
+            const menuButtonElement = document.getElementById('hamburger-link');
+            const menuBarElement = document.getElementById('main-nav');
+            menuButtonElement.addEventListener('click', () => {
+                menuButtonElement.classList.toggle('active');
+                menuBarElement.classList.toggle('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header-container">
+        <header id="nav-bar">
+            <div class="logo-container">
+                <a class="logo-link" href="{{ url_for('static', filename='images/SheepLogoV4GrauTransparent.svg') }}">
+                    <img class="logo" src="{{ url_for('static', filename='images/SheepLogoV4GrauTransparent.png') }}" alt="أنعام Logo">
+                </a>
+                <h1 class="logo-text">أنعام</h1>
+            </div>
+            <nav id="main-nav">
+                <a class="nav-link" href="#">تعرف علينا</a>
+                <a class="nav-link" href="{{ url_for('sheep_input') }}">قيم خدماتنا</a>
+                <a class="nav-link" href="{{ url_for('models') }}">ابدأ بفحص الأضحية</a>
+                <a class="default-btn white-btn" href="mailto:info@odhitislima.com">اتصل بنا</a>
+            </nav>
+            <a id="hamburger-link" href="javascript:void(0);"><img id="hamburger-logo" src="{{ url_for('static', filename='images/hamburger.svg') }}" alt="Menu"></a>
+        </header>
+        <div class="headline">
+            <h2 class="headline-title">أنعام</h2>
+            <span class="headline-quote">مرحباً بكم في "أنعام" - منصتكم الموثوقة لمراقبة وتقييم صحة الأغنام المخصصة للأضحية!</span>
+        </div>
+    </div>
+
+    <main>
+        <article>
+            <div class="text-container">
+                <h3>مرحباً بكم في موقعنا!</h3>
+                <span>في "أنعام"، نقدم حلاً مبتكرًا لمربي الأغنام لضمان صحة وسلامة أضحياتهم.</span>
+                <span>نوفر لكم تقييمات دقيقة لحالة صحة الغنم، بالإضافة إلى نصائح وإرشادات عملية للحفاظ على صحة القطيع.</span>
+                <span>انضموا إلينا الآن لتضمنوا صحة وسلامة أضحياتكم!</span>
+
+            </div>
+            <figure class="image-container">
+                <img src="{{ url_for('static', filename='images/martin-bisof-xsIOCYmlI1g-unsplash.jpg') }}" alt="غنم في المرعى">
+            </figure>
+        </article>
+
+        <article>
+            <div class="text-container">
+                <h3>خدماتنا المميزة</h3>
+                <span>نحن نقدم مجموعة من الخدمات لضمان صحة الأضحية:</span>
+                <ul>
+                    <li>فحص صحي شامل للأضحية باستخدام أحدث التقنيات.</li>
+                    <li>تقييم فوري لصحة الأضحية من خلال خبراء بيطريين معتمدين.</li>
+                    <li>تقديم نصائح وإرشادات للعناية بالأغنام وتحسين صحتها.</li>
+                    <li>متابعة دورية لحالة الأضحية وتقديم تقارير مفصلة.</li>
+                </ul>
+            </div>
+            <figure class="image-container">
+                <img src="{{ url_for('static', filename='images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg') }}" alt="شخص يكتب على اللابتوب">
+            </figure>
+        </article>
+
+        <article>
+            <div class="text-container">
+                <h3>مشاريع البرمجة الخاصة بنا</h3>
+                <span>نحن نعمل باستمرار على تطوير أدوات برمجية لمساعدة المربين في رعاية الأغنام.</span>
+                <span>من مشاريع صغيرة إلى تطبيقات ويب متكاملة، نسعى لتقديم أفضل الحلول التقنية.</span>
+                <span>استعرضوا مشاريعنا على GitHub!</span>
+                <div class="button-container">
+                    <a class="default-btn white-btn" href="https://github.com/Buushra1dm/Buushra1dm">الملف الشخصي على GitHub</a>
+                    <a class="default-btn border-btn" href="https://github.com/Buushra1dm/Buushra1dm">مستودعاتنا على GitHub</a>
+                </div>
+            </div>
+            <figure class="image-container">
+                <img src="{{ url_for('static', filename='images/arnold-francisca-f77Bh3inUpE-unsplash.jpg') }}" alt="محرر أكواد على لابتوب">
+            </figure>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <span id="copyright">أنعام &copy; 2023</span>
+            <ul>
+                <li><a href="use.html">سياسة الاستخدام</a></li>
+                <li><a href="QAS.html">الأسئلة الشائعة</a></li>
+                <li><a href="datenschutz.html">سياسة الخصوصية</a></li>
+            </ul>
+            <span>تم الإنشاء بواسطة فريق أنعام</span>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنعام - صفحة تقييم الخدمات</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link rel="icon" href="../static/images/SheepLogoV4GrauTransparent.png" type="image/png">
+    <link rel="icon" href="../static/images/SheepLogoV4GrauTransparent.svg" type="image/svg+xml">
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .default-btn {
+            background-color: #94261a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .default-btn:hover {
+            background-color: #a0281b;
+        }
+
+        .headline-title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .headline-quote {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .property-input-form {
+            background-color: #34495e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            color: #ecf0f1;
+        }
+
+        .property-input-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .property-input-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .property-input-form input, 
+        .property-input-form select, 
+        .property-input-form textarea {
+            width: calc(100% - 32px);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .property-input-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #94261a;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .property-input-form button:hover {
+            background-color: #a0281b;
+        }
+
+        footer {
+            background-color: #34495e;
+            padding: 20px;
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <header id="nav-bar">
+            <div class="logo-container">
+                <a class="logo-link" href="{{ url_for('static', filename='images/hamburger.svg') }}">
+                    <img class="logo" src="{{ url_for('static', filename='images/SheepLogoV4GrauTransparent.png') }}" alt="أضحيتي السليمة Logo">
+                </a>
+                <h1 class="logo-text">أنعام</h1>
+            </div>
+            <nav id="main-nav">
+                <a class="nav-link" href="{{ url_for('home') }}">تعرف علينا</a>
+                <a class="nav-link" href="{{ url_for('sheep_input') }}">قيم خدماتنا</a>
+                <a class="nav-link" href="#">ابدأ بفحص الأضحية</a>
+                <a class="default-btn white-btn" href="mailto:info@odhitislima.com">اتصل بنا</a>
+            </nav>
+            <a id="hamburger-link" href="javascript:void(0);">
+                <img id="hamburger-logo" src="{{ url_for('static', filename='images/hamburger.svg') }}">
+            </a>
+        </header>
+        <div class="headline">
+            <h2 class="headline-title">تقييم الخدمات</h2>
+            <span class="headline-quote">مرحباً بكم في "أنعام" - نرحب بآرائكم حول خدماتنا لتقديم الأفضل!</span>
+        </div>
+    </div>
+    <div class="property-input-form">
+        <h1>تقييم الخدمات</h1>
+        <form id="serviceForm" action="index.html" method="post">
+            <label for="service_name">اسم الخدمة:</label>
+            <input type="text" id="service_name" name="service_name" required>
+            
+            <label for="service_quality">جودة الخدمة:</label>
+            <select id="service_quality" name="service_quality" required>
+                <option value="ممتاز">ممتاز</option>
+                <option value="جيد جداً">جيد جداً</option>
+                <option value="جيد">جيد</option>
+                <option value="مقبول">مقبول</option>
+                <option value="ضعيف">ضعيف</option>
+            </select>
+            
+            <label for="service_satisfaction">رضا العملاء:</label>
+            <select id="service_satisfaction" name="service_satisfaction" required>
+                <option value="راضٍ تماماً">راضٍ تماماً</option>
+                <option value="راضٍ إلى حد ما">راضٍ إلى حد ما</option>
+                <option value="غير راضٍ">غير راضٍ</option>
+                <option value="غير راضٍ تماماً">غير راضٍ تماماً</option>
+            </select>
+            
+            <label for="recommend_service">هل توصي بهذه الخدمة؟</label>
+            <select id="recommend_service" name="recommend_service" required>
+                <option value="نعم">نعم</option>
+                <option value="لا">لا</option>
+            </select>
+            
+            <label for="service_improvements">اقتراحات لتحسين الخدمة:</label>
+            <textarea id="service_improvements" name="service_improvements" rows="4"></textarea>
+            
+            <button type="button" onclick="window.location.href='{{ url_for('home') }}'">إرسال</button>
+
+
+        </form>
+    </div>
+ 
+        
+
+</body>
+<footer>
+</footer>
+</html>

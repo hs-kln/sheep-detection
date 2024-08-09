@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أضحيتي السليمة - معلومات الاتصال</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&family=Ysabeau:ital@1&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="/static/imagens/Logotipo.png" type="image/png">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyright = document.getElementById('copyright');
+            copyright.innerText = copyright.innerText.replace('2023', '2023-' + new Date().getFullYear());
+
+            const navBarElement = document.getElementById('nav-bar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 70) navBarElement.classList.add('nav-on-scroll');
+                else navBarElement.classList.remove('nav-on-scroll');
+            });
+
+            const menuButtonElement = document.getElementById('hamburger-link');
+            const menuBarElement = document.getElementById('main-nav');
+            menuButtonElement.addEventListener('click', (_event) => {
+                menuButtonElement.classList.toggle('active');
+                menuBarElement.classList.toggle('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky" id="nav-bar">
+        <a href="#" class="logo">
+            <img src="/static/imagens/Logotipo.png" alt="أضحيتي السليمة Logo">
+        </a>
+        <ul class="navbar">
+            <li><a href="#home">الصفحة الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#about">معلومات عنا</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+        <div class="h-btn">
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-img" data-aos="zoom-in-up">
+            <img src="/static/imagens/1.jpg" alt="Home Image">
+        </div>
+        <div class="home-text" data-aos="zoom-in-up">
+            <h1>مرحباً بكم في "أضحيتي السليمة" - منصتكم الموثوقة لمراقبة وتقييم صحة الأغنام المخصصة للأضحية!</h1>
+            <p>نحن نقدم حلاً مبتكرًا لمربي الأغنام لضمان صحة وسلامة أغنامهم قبل موسم الأضحية.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>اتصل بنا</h2>
+            <p>إذا كان لديك أي أسئلة، فلا تتردد في الاتصال بنا.</p>
+            <div class="icons">
+                <p><i class='bx bx-phone'></i> +351 961234567</p>
+                <p><i class='bx bx-envelope'></i> 1234@gmail.com</p>
+            </div>
+            <!-- Customer Feedback Form -->
+            <form action="/submit-feedback" method="post" class="feedback-form">
+                <label for="name">اسمك:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">تعليقك:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit" class="btn">أرسل تعليقك</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1200
+        });
+    </script>
+
+    <!-- JS File -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
